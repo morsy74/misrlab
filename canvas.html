@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #click{
+           
+            background-color: black;
+            color: white;
+            border: 3px solid black;
+            border-radius: 20px;
+            height: 40px;
+            width: 100px;
+            
+            
+            font-size:20px;
+            margin-bottom:10px;
+        }
+        #click:hover{
+            color: black;
+            background-color: white;
+            border: 3px solid white;
+        }
+        #canvas{
+            background-color: rgb(230, 230, 230);
+            display: block;
+        }
+        
+            
+        
+    </style>
+</head>
+<body>
+   
+        <input type="color" id="color"> 
+        <input type="button" id="click" value="Click" onclick="circle()"/> 
+        <canvas id="canvas" width="1200px" height="600px"></canvas>
+        
+    
+    
+
+    <script>
+        function circle(){
+            var inpColor = document.getElementById("color");
+            var canv = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for(var i=0; i<300; i++){
+                ctx.beginPath();
+                var w = Math.floor(Math.random()*1200);
+                var h = Math.floor(Math.random()*600);
+                ctx.arc(w, h, 20, 0, 2 * Math.PI);
+                ctx.fillStyle = "white";
+                ctx.strokeStyle = inpColor.value;
+                ctx.fill();
+                ctx.stroke();
+               
+            }
+        }
+    </script>
+</body>
+
+</html>
